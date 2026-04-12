@@ -9,10 +9,9 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   // 2. Налаштовуємо позиціонування через інлайнові стилі
   // Важливо: додаємо px до числових значень координат
-  // notification.style.position = 'fixed';
-  // notification.style.top = `${posTop}px`;
-  // notification.style.right = `${posRight}px`;
-  notification.style.cssText = `position: absolute; top: ${posTop}px; right: ${posRight}px;`;
+  notification.style.position = 'absolute';
+  notification.style.top = `${posTop}px`;
+  notification.style.right = `${posRight}px`;
 
   // 3. Створюємо заголовок h2
   const notificationTitle = document.createElement('h2');
@@ -37,7 +36,6 @@ const pushNotification = (posTop, posRight, title, description, type) => {
 
   // 7. Налаштовуємо автоматичне приховування через 2 секунди
   setTimeout(() => {
-    // Згідно з умовою, не видаляємо (remove), а ховаємо візуально
     notification.style.display = 'none';
   }, 2000);
 };
