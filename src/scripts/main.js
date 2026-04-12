@@ -12,36 +12,35 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // Додаємо загальний клас та клас типу (напр. notification success)
   notification.classList.add('notification', type);
 
-  // 2. Налаштовуємо позиціонування через інлайнові стилі
-  // Важливо: додаємо px до числових значень координат
-  // Використовуємо cssText для стабільного порядку властивостей,
+  // додаємо px до числових значень координат
+  // викор. cssText для стабільного порядку властивостей,
   // замість notification.style.cssText = `...`;
   notification.style.cssText = `position: absolute; top: ${posTop}px; right: ${posRight}px;`;
-  // 3. Створюємо заголовок h2
+  // створюємо заголовок h2
 
   const notificationTitle = document.createElement('h2');
-  // Додаємо обов'язковий клас 'title' згідно з умовою
+  // дод. обов'язковий клас 'title' згідно з умовою
 
   notificationTitle.classList.add('title');
   notificationTitle.textContent = title;
 
-  // 4. Створюємо опис p
+  // створюємо опис p
   const notificationDescription = document.createElement('p');
 
   notificationDescription.classList.add('description');
   // Додаємо клас згідно з чеклистом
   notificationDescription.textContent = description;
 
-  // 5. Збираємо структуру: додаємо заголовок та опис всередину контейнера
+  //  додаємо заголовок та опис всередину контейнера
   notification.appendChild(notificationTitle);
   notification.appendChild(notificationDescription);
 
-  // 6. Додаємо готове сповіщення в DOM (в кінець body)
+  // дод.сповіщення в DOM (в кінець body)
   document.body.appendChild(notification);
 
-  // 7. Налаштовуємо автоматичне приховування через 2 секунди
+  // налашт.автоприховування через 2 секунди
   setTimeout(() => {
-    // Згідно з умовою, не видаляємо (remove), а ховаємо візуально
+    // ховаємо візуально
     notification.style.display = 'none';
   }, 2000);
 };
