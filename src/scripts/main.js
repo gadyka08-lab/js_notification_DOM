@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 /**
  * Функція для створення та відображення сповіщень.
  */
@@ -15,7 +13,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // додаємо px до числових значень координат
   // викор. cssText для стабільного порядку властивостей,
   // замість notification.style.cssText = `...`;
-  notification.style.cssText = `position: absolute; top: ${posTop}px; right: ${posRight}px;`;
+  notification.setAttribute(
+    'style',
+    `position: absolute; top: ${posTop}px; right: ${posRight}px;`,
+  );
   // створюємо заголовок h2
 
   const notificationTitle = document.createElement('h2');
