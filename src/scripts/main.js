@@ -13,12 +13,10 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   // додаємо px до числових значень координат
   // викор. cssText для стабільного порядку властивостей,
   // замість notification.style.cssText = `...`;
-  notification.setAttribute(
-    'style',
-    `position: absolute; top: ${posTop}px; right: ${posRight}px;`,
-  );
-  // створюємо заголовок h2
+  // eslint-disable-next-line prettier/prettier
+  notification.setAttribute('style', `top: ${posTop}px; right: ${posRight}px;`);
 
+  // створюємо заголовок h2
   const notificationTitle = document.createElement('h2');
   // дод. обов'язковий клас 'title' згідно з умовою
 
